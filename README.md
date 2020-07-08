@@ -3,10 +3,10 @@
 This is react + electron + webpack + typescript template project.
 If you wan't this project, clone project and then just run!
 
-[![react](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png)](https://reactjs.org)
-[![ts](https://miro.medium.com/max/672/1*PDoTqct9nfpAgi2XL9iTDw.jpeg)](https://www.typescriptlang.org/)
-[![electron](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png)](https://electronjs.org)
-[![webpack](https://banner2.cleanpng.com/20190417/yb/kisspng-webpack-computer-icons-scalable-vector-graphics-re-webpack-svg-icon-transparent-amp-png-clipart-fre-5cb79870aa3cb3.6069044115555359846973.jpg)](https://webpack.js.org/)
+[![react](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png =250x)](https://reactjs.org)
+[![ts](https://miro.medium.com/max/672/1*PDoTqct9nfpAgi2XL9iTDw.jpeg =250x)](https://www.typescriptlang.org/)
+[![electron](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png =250x)](https://electronjs.org)
+[![webpack](https://banner2.cleanpng.com/20190417/yb/kisspng-webpack-computer-icons-scalable-vector-graphics-re-webpack-svg-icon-transparent-amp-png-clipart-fre-5cb79870aa3cb3.6069044115555359846973.jpg =250x)](https://webpack.js.org/)
 
 ## Use NPX
 
