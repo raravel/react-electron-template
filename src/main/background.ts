@@ -10,6 +10,22 @@ import * as url from 'url';
 
 var mainWindow: BrowserWindow;
 
+const installExtensions = async () => {
+	const installer = require('electron-devtools-installer');
+	const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+	const extensions = [
+		'REACT_DEVELOPER_TOOLS',
+		'REDUX_DEVTOOLS',
+	];
+
+	return Promise
+	.all(extensions.map(name => {
+		console.log('Install Devtoos ', name);
+		installer.default(installer[name], forceDownload)
+	}))
+	.catch(console.error);
+}
+
 const createWindow = async () => {
 	mainWindow = new BrowserWindow({
 		width: 800,
@@ -35,7 +51,12 @@ const createWindow = async () => {
 	mainWindow.on('close', () => mainWindow = null);
 };
 
-app.on('ready', createWindow);
+app.on('ready', async () => {
+	if ( process.argv.NODE_ENV !== 'production' ) {
+		await installExtensions();
+	}
+	createWindow();
+});
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
