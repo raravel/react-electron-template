@@ -55,7 +55,7 @@ Is directory for raw html, script, assets etc.
 
 ### src/main
 
-For electron background worker. background.ts is like [main.js](https://www.electronjs.org/docs/tutorial/first-app#electron-development-in-a-nutshell)
+For electron background worker. `background.ts` is like [main.js](https://www.electronjs.org/docs/tutorial/first-app#electron-development-in-a-nutshell)
 
 ### src/view
 
@@ -64,7 +64,7 @@ You can manipulating react component in `src/view`.
 ### webpack config
 
 `webpack.electron.config.js`. building `src/main` contents to `dist` directory.
-`webpack.react.config.js`. bulding `src/view` contents to `dist` and run react dev server. Before run electron process.
+`webpack.react.config.js`. bulding `src/view` contents to `dist` and run electron process before react webpack dev server.
 
 
 ## Description
