@@ -8,6 +8,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { spawn } = require('child_process');
 
 module.exports = {
 	mode: process.env.NODE_ENV,
@@ -63,15 +64,15 @@ module.exports = {
 		port: 2020,
 		before() {
 			if ( process.env.WITH_ELECTRON ) {
-				const { spawn } = require('child_process');
 				console.log('Start electron process');
-				spawn('npm', ['run', 'electron:serve'], {
-					shell: true,
-					env: process.env,
-					stdio: 'inherit',
-				})
-				.on('close', code => process.exit(code))
-				.on('error', err => console.error(err));
+				spawn('./node_modules/.bin/nodemon',
+					['--watch', 'src/main', '--verbose', '--ext', 'ts,tsx,ts,json', '--delay', '1', '--exec', 'npm', 'run', 'electron:serve'], {
+						shell: true,
+						env: process.env,
+						stdio: 'inherit',
+					})
+					.on('close', code => process.exit(code))
+					.on('error', err => console.error(err));
 			}
 		},
 	},
