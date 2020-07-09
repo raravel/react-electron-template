@@ -8,10 +8,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App.tsx';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+		<BrowserRouter>
+			<ul>
+				<li><Link to="/">Home</Link></li>
+				<li><Link to="/about">About</Link></li>
+			</ul>
+			<App />
+		</BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );

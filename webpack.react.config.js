@@ -75,6 +75,7 @@ module.exports = {
 					.on('error', err => console.error(err));
 			}
 		},
+		historyApiFallback: true,
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
