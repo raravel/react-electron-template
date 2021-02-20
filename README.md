@@ -7,13 +7,13 @@ If you wan't this project, clone project and then just run!
 ## Use NPX
 
 ```sh
-npx degit tree-some/react-electron-typescript <Your Project>
+npx degit raravel/react-electron-typescript <Your Project>
 ```
 
 ## Git Clone
 
 ```sh
-git clone https://github.com/Tree-Some/react-electron-template.git <Your Project>
+git clone https://github.com/raravel/react-electron-template.git <Your Project>
 ```
 
 ## Development
