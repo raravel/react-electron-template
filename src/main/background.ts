@@ -26,6 +26,8 @@ const installExtensions = async () => {
 	.catch(console.error);
 }
 
+console.log();
+
 const createWindow = async () => {
 	mainWindow = new BrowserWindow({
 		width: 800,
@@ -38,7 +40,7 @@ const createWindow = async () => {
 
 	if (process.env.NODE_ENV === 'development') {
 		process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1'; // eslint-disable-line require-atomic-updates
-		mainWindow.loadURL(`http://localhost:2020`);
+		mainWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL);
 
 		mainWindow.webContents.once('dom-ready', () => {
 			mainWindow!.webContents.openDevTools();

@@ -62,13 +62,16 @@ module.exports = {
 	},
 	devServer: {
 		port: 2020,
-		before() {
+		after(app, server, compiler) {
 			if ( process.env.WITH_ELECTRON ) {
 				console.log('Start electron process');
 				spawn('./node_modules/.bin/nodemon',
 					['--watch', 'src/main', '--verbose', '--ext', 'ts,tsx,ts,json', '--delay', '1', '--exec', 'npm', 'run', 'electron:serve'], {
 						shell: true,
-						env: process.env,
+						env: {
+							...process.env,
+							WEBPACK_DEV_SERVER_URL: `http://${server.options.host}:${server.options.port}${server.options.publicPath}`,
+						},
 						stdio: 'inherit',
 					})
 					.on('close', code => process.exit(code))
