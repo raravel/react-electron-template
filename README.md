@@ -1,6 +1,6 @@
 # React Electron Typescript
 
-This is [react](https://reactjs.org) + [electron](https://electronjs.org) + [webpack](https://webpack.js.org/) + [typescript](https://www.typescriptlang.org/) template project.
+This is [react](https://reactjs.org) + [electron](https://electronjs.org) + [webpack](https://webpack.js.org/) + [typescript](https://www.typescriptlang.org/) + [swc](https://swc.rs) template project.
 If you wan't this project, clone project and then just run!
 
 
@@ -41,12 +41,15 @@ yarn build
 ├── src
 │   ├── main
 │   │   └── background.ts
-│   └── view
+│   └── views
 │       ├── App.tsx
+│       ├── Components
+│       │   ├── About.tsx
+│       │   └── Home.tsx
 │       └── index.tsx
+├── swc.electron.json
 ├── tsconfig.json
-├── webpack.electron.config.js
-└── webpack.react.config.js
+└── webpack.config.js
 ```
 
 ### public
@@ -57,17 +60,17 @@ Is directory for raw html, script, assets etc.
 
 For electron background worker. `background.ts` is like [main.js](https://www.electronjs.org/docs/tutorial/first-app#electron-development-in-a-nutshell)
 
-### src/view
+### src/views
 
-You can manipulating react component in `src/view`.
+You can manipulating react component in `src/views`.
 
 ### webpack config
 
-`webpack.electron.config.js`. building `src/main` contents to `dist` directory.
-`webpack.react.config.js`. bulding `src/view` contents to `dist` and run electron process before react webpack dev server.
+`webpack.react.config.js`. building `src/views` contents to `dist` and run electron process before react webpack dev server.
 
 
 ## Description
 
 If you run `npm run dev`, running process react webpack dev server. and then, running electron process on [nodemon](https://nodemon.io/).
 I think it is an efficient way to partially operational hot reload.
+And by using swc, the build time of typescript is shortened.
