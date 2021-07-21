@@ -14,7 +14,7 @@ module.exports = {
 	mode: process.env.NODE_ENV,
 	entry: [
 		'@babel/polyfill',
-		path.join(__dirname, 'src/view', 'index.tsx'),
+		path.join(__dirname, 'src/views', 'index.tsx'),
 	],
 	module: {
 		rules: [
