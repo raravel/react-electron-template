@@ -36,7 +36,7 @@ const createWindow = async () => {
 		show: false,
 	});
 
-	if (process.env.NODE_ENV !== 'production') {
+	if (process.env.NODE_ENV === 'development') {
 		process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1'; // eslint-disable-line require-atomic-updates
 		mainWindow.loadURL(`http://localhost:2020`);
 
@@ -52,7 +52,7 @@ const createWindow = async () => {
 };
 
 app.on('ready', async () => {
-	if ( process.argv.NODE_ENV !== 'production' ) {
+	if ( process.argv.NODE_ENV === 'development' ) {
 		await installExtensions();
 	}
 	createWindow();

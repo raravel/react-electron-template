@@ -2,7 +2,7 @@
 	"name": "react-electron-typescript",
 	"version": "0.0.0",
 	"private": true,
-	"main": "dist/background.js",
+	"main": "dist/main/background.js",
 	"scripts": {
 		"react:build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
 		"react:serve": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
@@ -16,7 +16,7 @@
 	"build": {
 		"productName": "ReactElectronTypescript",
 		"appId": "react.electron.typescript",
-		"asar": true,
+		"asar": false,
 		"directories": {
 			"output": "release"
 		},
